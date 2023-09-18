@@ -48,3 +48,42 @@ WHERE name = 'Layal';
 # delete
 DELETE FROM students 
 WHERE name = "Layal";
+
+#creating a joint table
+CREATE TABLE kousa AS 
+SELECT employees.name , employees.Company, companies.date
+FROM employees 
+INNER JOIN companies
+ON employees.company = companies.name
+
+#select
+SELECT name FROM kousa
+WHERE date < 2000
+
+#Selecting Role
+SELECT Company FROM employees
+WHERE Role = "Graphic Designer"
+
+# Order Desc
+SELECT * from students
+ORDER BY points DESC
+LIMIT 1 ;
+
+# Select avg
+SELECT AVG(points) AS averagepoints
+FROM students;
+
+# Counting points
+SELECT COUNT() AS numstudents
+FROM students
+WHERE points = 500;
+
+# Select
+SELECT name
+FROM students
+WHERE name LIKE '%s%';
+
+# order desc
+SELECT
+FROM students
+ORDER BY points DESC;"
