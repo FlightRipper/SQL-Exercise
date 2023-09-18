@@ -24,6 +24,15 @@ SET Points = Points + 10 WHERE name = "Basma";
 UPDATE students
 SET Points = Points - 10 WHERE name = "Alex";
 
+CREATE TABLE kousa AS
+SELECT employees.name , employees.Company , companies.date
+FROM employees
+INNER JOIN companies
+ON employees.company = companies.name 
+
+SELECT * FROM kousa
+WHERE date < 2000;
+
 # create table
 CREATE TABLE graduates (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
